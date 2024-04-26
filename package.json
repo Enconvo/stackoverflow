@@ -1,0 +1,154 @@
+{
+  "$schema": "https://enconvo.com/schemas/extension.json",
+  "name": "stackoverflow",
+  "version": "0.0.2",
+  "description": "Use internet browsing to get real time information from stackoverflow.",
+  "title": "StackOverFlow Browser",
+  "icon": "icon.png",
+  "author": "EnconvoAI",
+  "categories": [
+    "Search"
+  ],
+  "license": "MIT",
+  "type": "module",
+  "commands": [
+    {
+      "name": "stackoverflow",
+      "title": "StackOverFlow Browser",
+      "description": "Use internet browsing to get real time information from stackoverflow.",
+      "icon": "icon.png",
+      "mode": "no-view",
+      "targetCommand": "internet_browsing/serpapi",
+      "aiPlugin": true,
+      "params": [
+        {
+          "name": "text",
+          "description": "The text to be used as search query.",
+          "type": "string",
+          "required": true,
+          "default": ""
+        }
+      ],
+      "preferences": [
+        {
+          "name": "responseLanguage",
+          "description": "The language used to force LLM to respond",
+          "type": "dropdown",
+          "required": false,
+          "title": "Response Language",
+          "default": "auto",
+          "data": [
+            {
+              "title": "auto",
+              "value": "auto"
+            },
+            {
+              "title": "中文简体",
+              "value": "zh-Hans"
+            },
+            {
+              "title": "中文繁体",
+              "value": "zh-Hant"
+            },
+            {
+              "title": "English",
+              "value": "en"
+            },
+            {
+              "title": "Japanese",
+              "value": "ja"
+            },
+            {
+              "title": "Korean",
+              "value": "ko"
+            },
+            {
+              "title": "French",
+              "value": "fr"
+            },
+            {
+              "title": "German",
+              "value": "de"
+            },
+            {
+              "title": "Spanish",
+              "value": "es"
+            }
+          ]
+        },
+        {
+          "name": "llm",
+          "description": "The model used to generate responses",
+          "type": "extension",
+          "required": false,
+          "default": "default",
+          "title": "LLM Model"
+        },
+        {
+          "name": "browsing_providers",
+          "description": "The Browsing Provider used to generate responses",
+          "type": "extension",
+          "required": false,
+          "default": "enconvo_browsing_provider",
+          "title": "Browsing Providers",
+          "visibility": "hidden"
+        },
+        {
+          "name": "link_reader_providers",
+          "description": "The Link Reader provider to use.",
+          "type": "extension",
+          "required": false,
+          "default": "default",
+          "title": "Link Reader Provider"
+        },
+        {
+          "name": "includeSites",
+          "description": "IncludeSites to search, comma separated",
+          "type": "textfield",
+          "required": false,
+          "title": "Specify search source website",
+          "default": "https://stackoverflow.com/",
+          "visibility": "hidden"
+        },
+        {
+          "name": "auto_audio_play",
+          "description": "Automatically play result content",
+          "type": "checkbox",
+          "required": false,
+          "title": "Automatically Play TTS Audio",
+          "default": false
+        },
+        {
+          "name": "tts_providers",
+          "description": "The TTS provider to use.",
+          "type": "extension",
+          "required": false,
+          "default": "default",
+          "title": "TTS Provider"
+        }
+      ]
+    }
+  ],
+  "dependencies": {
+    "@enconvo/api": "^0.1.125",
+    "@langchain/core": "^0.1.58",
+    "langchain": "^0.1.33"
+  },
+  "devDependencies": {
+    "@types/node": "^18.19.31",
+    "@types/react": "18.2.27",
+    "eslint": "^8.57.0",
+    "prettier": "^2.8.8",
+    "tsup": "^7.2.0",
+    "typescript": "^5.4.5"
+  },
+  "scripts": {
+    "lint": "eslint src",
+    "lint:fix": "npm run lint --fix",
+    "format": "prettier --write \"**/*.ts\"",
+    "format:check": "prettier --list-different \"**/*.ts\"",
+    "build": "enconvo",
+    "dev": "enconvo --dev"
+  },
+  "minAppVersion": "1.8.8"
+}
