@@ -1,7 +1,7 @@
 {
   "$schema": "https://enconvo.com/schemas/extension.json",
   "name": "stackoverflow",
-  "version": "0.0.2",
+  "version": "0.0.3",
   "description": "Use internet browsing to get real time information from stackoverflow.",
   "title": "StackOverFlow Browser",
   "icon": "icon.png",
@@ -43,11 +43,11 @@
               "value": "auto"
             },
             {
-              "title": "中文简体",
+              "title": "\u4e2d\u6587\u7b80\u4f53",
               "value": "zh-Hans"
             },
             {
-              "title": "中文繁体",
+              "title": "\u4e2d\u6587\u7e41\u4f53",
               "value": "zh-Hant"
             },
             {
