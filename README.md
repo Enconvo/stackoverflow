@@ -1,13 +1,49 @@
-# Internet Browsing
+# StackOverFlow Browser
 
+[![Version](https://img.shields.io/badge/version-0.0.5-blue.svg)](https://enconvo.com)
+[![License](https://img.shields.io/badge/license-MIT-green.svg)](LICENSE)
+[![Author](https://img.shields.io/badge/author-EnconvoAI-orange.svg)](https://enconvo.com)
+[![Category](https://img.shields.io/badge/category-Search-purple.svg)](https://enconvo.com)
 
-## What is this?
+## Description
 
-This is an Enconvo Extension that helps you browse the internet.
+Use internet browsing to get real time information from stackoverflow. This Enconvo Extension helps you search and browse StackOverflow content efficiently.
 
+## Features
 
-## How to use it?
-![](https://raw.githubusercontent.com/Enconvo/Internet-Browsing/main/metadata/Screenshot.png)
+- Real-time StackOverflow search integration
+- Domain-specific search capabilities
+- No-view mode operation
+- Seamless integration with Enconvo platform
 
-## Installation
-https://store.enconvo.com/plugins/Internet-Browsing
+### Development
+
+```bash
+# Install dependencies
+npm install
+
+# Lint code
+npm run lint
+
+# Fix lint issues
+npm run lint:fix
+
+# Format code
+npm run format
+
+# Check format
+npm run format:check
+```
+
+## Configuration
+
+The extension supports the following preferences:
+- **include_domains**: Specify search source website (default: stackoverflow.com)
+
+## License
+
+This project is licensed under the MIT License - see the LICENSE file for details.
+
+## Author
+
+Created by EnconvoAI
